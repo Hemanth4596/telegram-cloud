@@ -17,7 +17,7 @@ BOT_TOKEN = "8716019242:AAHs0DugCk7kmEcS6Fh7Y_Ihmc7K0EI5ZCw"
 GROUP_CHAT_ID = -1004388905117
 PASSWORD_HASH = "$pbkdf2-sha256$29000$YCxlrPX.X0vJ2fv/X2ut1Q$cTLa/Zj1hiqsODIIWmFZoZeeEp3eRDODbmtmCHj8ODI"
 JWT_SECRET = "MySuperSecretKeyForTelegramCloud2026!"
-DATABASE_URL = "postgresql://..."  # <-- replace with your Supabase connection string
+DATABASE_URL = "postgresql://postgres:sai4596154973@db.tohxlxsoouazehsbkapf.supabase.co:5432/postgres"  # <-- replace with your Supabase connection string
 
 # Optional: if any are missing, raise an error
 if not all([BOT_TOKEN, GROUP_CHAT_ID, PASSWORD_HASH, JWT_SECRET, DATABASE_URL]):
