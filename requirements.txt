@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-telegram-bot
+databases
+asyncpg
+sqlalchemy
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
