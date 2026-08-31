@@ -11,19 +11,15 @@ import asyncpg
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, select
 from sqlalchemy.sql import text
 
-# ===== CONFIGURATION =====
-# ===== CONFIGURATION (hardcoded for local testing) =====
-BOT_TOKEN = "8716019242:AAHs0DugCk7kmEcS6Fh7Y_Ihmc7K0EI5ZCw"
-GROUP_CHAT_ID = -1004388905117
-PASSWORD_HASH = "$pbkdf2-sha256$29000$YCxlrPX.X0vJ2fv/X2ut1Q$cTLa/Zj1hiqsODIIWmFZoZeeEp3eRDODbmtmCHj8ODI"
-JWT_SECRET = "MySuperSecretKeyForTelegramCloud2026!"
-DATABASE_URL = "postgresql://postgres:sai4596154973@db.tohxlxsoouazehsbkapf.supabase.co:5432/postgres"  # <-- replace with your Supabase connection string
+# ===== CONFIGURATION from environment =====
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+GROUP_CHAT_ID = int(os.environ.get("GROUP_CHAT_ID"))
+PASSWORD_HASH = os.environ.get("PASSWORD_HASH")
+JWT_SECRET = os.environ.get("JWT_SECRET")
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-# Optional: if any are missing, raise an error
 if not all([BOT_TOKEN, GROUP_CHAT_ID, PASSWORD_HASH, JWT_SECRET, DATABASE_URL]):
-    raise ValueError("Missing required configuration")
-
-
+    raise ValueError("Missing required environment variables")
 
 JWT_ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7
