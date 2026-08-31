@@ -7,3 +7,4 @@ sqlalchemy
 python-jose[cryptography]
 passlib[bcrypt]
 python-dotenv
+python-multipart   <-- add this line
